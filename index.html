@@ -25,7 +25,7 @@
 
     <!--loading the modules-->
     <script>
-        require(["esri/config" ,"esri/Map", "esri/views/MapView" ], (esriConfig, Map, MapView) => {
+        require(["esri/config" ,"esri/Map", "esri/views/MapView"], (esriConfig, Map, MapView) => {
             
             //adding in API Key
             esriConfig.apiKey = "AAPK50bd33a7f78c4bd98439817346c45150YxOaoF_yiyzXk7-A7yCiGXxGKE8ywmKK9LJdIaiT30z5N5ry4n9ghqL74FTTcDK7";
@@ -34,10 +34,13 @@
                 basemap: "satellite"
             });
 
-            const view = new MapView({
-                container: "viewDiv", // Reference to the DOM node that will contain the view
-                 map: map // References the map object
-             });
+             //Challenge 1: This block of code centers on the Eiffel Tower and sets the zoom
+             const view = new MapView({
+                container: "viewDiv",  
+                    map: map, 
+                    center: [2.29449, 48.85844],  // Lon and lat of Eiffel Tower
+                    zoom: 15 
+        });
 
         });
         </script>
