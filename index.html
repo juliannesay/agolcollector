@@ -25,7 +25,7 @@
 
     <!--loading the modules-->
     <script>
-        require(["esri/config" ,"esri/Map", "esri/views/MapView"], (esriConfig, Map, MapView) => {
+        require(["esri/config" ,"esri/Map", "esri/views/MapView", "esri/widgets/Locate"], (esriConfig, Map, MapView, Locate) => {
             
             //adding in API Key
             esriConfig.apiKey = "AAPK50bd33a7f78c4bd98439817346c45150YxOaoF_yiyzXk7-A7yCiGXxGKE8ywmKK9LJdIaiT30z5N5ry4n9ghqL74FTTcDK7";
@@ -40,7 +40,12 @@
                     map: map, 
                     center: [2.29449, 48.85844],  // Lon and lat of Eiffel Tower
                     zoom: 15 
-        });
+                });
+
+            // Add the locate widget to the top left corner of the view
+            view.ui.add(locateBtn, {
+                position: "top-left"
+            });
 
         });
         </script>
